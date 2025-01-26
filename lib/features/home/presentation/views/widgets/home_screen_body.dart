@@ -15,6 +15,7 @@ class HomeScreenBody extends StatelessWidget {
         children: [
           CustomAppBar(),
           CustomListViewItems(),
+          Text("Best Seller"),
         ],
       ),
     );
