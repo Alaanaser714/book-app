@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constants/styles.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({super.key});
+  const BookRating({
+    super.key,
+    required this.mainAxisAlignment,
+  });
+
+  final MainAxisAlignment mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment,
       children: [
-        Text(
-          r"19.99$",
-          style: Styles.textstyle18,
-          maxLines: 2,
-        ),
-        Spacer(),
         Icon(
           Icons.star,
           color: Colors.amber,
