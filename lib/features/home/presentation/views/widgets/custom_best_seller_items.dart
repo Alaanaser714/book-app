@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/styles.dart';
-import 'custom_best_seller.dart';
+import 'book_rating.dart';
 import 'custom_list_items.dart';
 
 class CustomBestSelleritems extends StatelessWidget {
@@ -39,7 +39,7 @@ class CustomBestSelleritems extends StatelessWidget {
                     style: Styles.textstyle18,
                     maxLines: 2,
                   ),
-                  CustomBestSeller()
+                  BookRating()
                 ],
               ),
             ),

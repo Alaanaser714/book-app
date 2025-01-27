@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/styles.dart';
 
-class CustomBestSeller extends StatelessWidget {
-  const CustomBestSeller({super.key});
+class BookRating extends StatelessWidget {
+  const BookRating({super.key});
 
   @override
   Widget build(BuildContext context) {
