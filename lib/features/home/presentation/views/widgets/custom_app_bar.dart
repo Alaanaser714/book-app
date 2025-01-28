@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../core/constants/images_app.dart';
+import '../../../../../core/routes/routes_app.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -20,9 +22,11 @@ class CustomAppBar extends StatelessWidget {
             width: MediaQuery.of(context).size.width * .2,
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(RoutesApp.searchScreen);
+              },
               icon: Icon(
-                size: 25,
+                size: 30,
                 Icons.search,
               ))
         ],

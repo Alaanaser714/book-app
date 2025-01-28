@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constants/styles.dart';
 
 class CustomMainText extends StatelessWidget {
-  const CustomMainText({super.key});
+  const CustomMainText({
+    super.key,
+    required this.title,
+  });
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +19,7 @@ class CustomMainText extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "Best Seller",
+            title,
             style: Styles.textstyle20,
           ),
         ],

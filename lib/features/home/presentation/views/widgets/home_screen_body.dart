@@ -17,10 +17,13 @@ class HomeScreenBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Column(
             children: [
+              SizedBox(height: 20),
               CustomAppBar(),
               CustomListViewItems(),
               SizedBox(height: 15),
-              CustomMainText(),
+              CustomMainText(
+                title: 'Best Seller',
+              ),
               SizedBox(height: 15),
             ],
           ),
