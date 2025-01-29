@@ -1,7 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:book_app/core/utils/images_app.dart';
 import 'package:book_app/core/routes/routes_app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import 'slider_test.dart';
 
@@ -48,7 +51,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
 
   void navigationMethod() {
     Future.delayed(Duration(seconds: 3), () {
-      Get.toNamed(RoutesApp.homeScreen);
+      GoRouter.of(context).push(RoutesApp.homeScreen);
     });
   }
 

@@ -1,6 +1,6 @@
 import 'package:book_app/core/routes/routes_app.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
@@ -15,7 +15,7 @@ class CustomBestSelleritems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed(RoutesApp.bookDetails);
+        GoRouter.of(context).push(RoutesApp.bookDetails);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),

@@ -5,6 +5,7 @@ import 'package:book_app/features/splash/presentation/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'core/routes/routes.dart';
 import 'core/utils/services_locator.dart';
 import 'features/home/data/repo/home_repo_impl.dart';
 
@@ -31,12 +32,12 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: ColorsApp.primaryColor,
         ),
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+        routerConfig: AppRouter.router,
       ),
     );
   }
