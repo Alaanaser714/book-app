@@ -2,7 +2,7 @@ import 'package:book_app/core/routes/routes_app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/constants/styles.dart';
+import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 import 'custom_list_items.dart';
 

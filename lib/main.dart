@@ -1,11 +1,15 @@
-import 'package:book_app/core/constants/colors_app.dart';
+import 'package:book_app/core/utils/colors_app.dart';
+import 'package:book_app/features/home/presentation/viewmodel/cubits/featured_book_cuibt/featured_book_cuibt.dart';
+import 'package:book_app/features/home/presentation/viewmodel/cubits/newest_book/newest_book_cubit/newest_book_cubit.dart';
 import 'package:book_app/features/splash/presentation/views/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'core/routes/routes.dart';
+import 'core/utils/services_locator.dart';
+import 'features/home/data/repo/home_repo_impl.dart';
 
 void main() {
+  ServicesLocator();
   runApp(const MyApp());
 }
 
@@ -14,13 +18,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: ColorsApp.primaryColor,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => FeaturedBookCuibt(
+            getIt.get<HomeRepoImpl>(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => NewestBookCubit(
+            getIt.get<HomeRepoImpl>(),
+          ),
+        ),
+      ],
+      child: MaterialApp(
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: ColorsApp.primaryColor,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-      getPages: routes,
     );
   }
 }

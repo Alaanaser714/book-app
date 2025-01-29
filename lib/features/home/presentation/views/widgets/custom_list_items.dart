@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constants/images_app.dart';
+import '../../../../../core/utils/images_app.dart';
 
 class CustomListItems extends StatelessWidget {
   const CustomListItems({

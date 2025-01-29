@@ -1,4 +1,4 @@
-import 'package:book_app/core/constants/images_app.dart';
+import 'package:book_app/core/utils/images_app.dart';
 import 'package:book_app/core/routes/routes_app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

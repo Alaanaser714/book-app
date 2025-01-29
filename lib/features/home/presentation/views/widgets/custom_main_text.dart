@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constants/styles.dart';
+import '../../../../../core/utils/styles.dart';
 
 class CustomMainText extends StatelessWidget {
   const CustomMainText({

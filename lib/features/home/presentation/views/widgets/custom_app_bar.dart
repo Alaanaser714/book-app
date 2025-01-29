@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/constants/images_app.dart';
+import '../../../../../core/utils/images_app.dart';
 import '../../../../../core/routes/routes_app.dart';
 
 class CustomAppBar extends StatelessWidget {
