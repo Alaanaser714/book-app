@@ -27,9 +27,9 @@ class CustomListBestSellerItems extends StatelessWidget {
             },
           );
         } else if (state is NewestBookFailure) {
-          return Text(state.errMessage);
+          return Center(child: Text(state.errMessage));
         } else {
-          return const CircularProgressIndicator();
+          return Center(child: const CircularProgressIndicator());
         }
       },
     );
