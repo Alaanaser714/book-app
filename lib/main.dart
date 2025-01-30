@@ -1,7 +1,6 @@
 import 'package:book_app/core/utils/colors_app.dart';
 import 'package:book_app/features/home/presentation/viewmodel/cubits/featured_book_cuibt/featured_book_cuibt.dart';
 import 'package:book_app/features/home/presentation/viewmodel/cubits/newest_book/newest_book_cubit/newest_book_cubit.dart';
-import 'package:book_app/features/splash/presentation/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
