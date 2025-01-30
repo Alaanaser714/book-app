@@ -4,7 +4,9 @@ import 'package:book_app/features/home/presentation/viewmodel/cubits/featured_bo
 import 'package:book_app/features/home/presentation/viewmodel/cubits/featured_book_cuibt/featured_book_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../core/routes/routes_app.dart';
 import 'custom_list_items.dart';
 
 class CustomListViewItems extends StatelessWidget {
@@ -22,8 +24,17 @@ class CustomListViewItems extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return CustomListItems(
-                  imageUrl: state.books[index].volumeInfo.imageLinks!.thumbnail,
+                return GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(
+                      RoutesApp.bookDetails,
+                      extra: state.books[index],
+                    );
+                  },
+                  child: CustomListItems(
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks!.thumbnail,
+                  ),
                 );
               },
             ),
