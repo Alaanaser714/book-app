@@ -1,4 +1,5 @@
 import 'package:book_app/core/routes/routes_app.dart';
+import 'package:book_app/features/home/data/models/book2_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,7 +10,10 @@ import 'custom_list_items.dart';
 class CustomBestSelleritems extends StatelessWidget {
   const CustomBestSelleritems({
     super.key,
+    required this.bookModel,
   });
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,9 @@ class CustomBestSelleritems extends StatelessWidget {
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * .13,
-              child: CustomListItems(imageUrl: 'https://th.bing.com/th?q=%d8%b5%d9%88%d8%b1+%d9%83%d8%aa%d8%a8+%d9%83%d8%aa%d8%a7%d8%a8&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-XA&cc=EG&setlang=en&adlt=strict&t=1&mw=247',),
+              child: CustomListItems(
+                imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+              ),
             ),
             Expanded(
               child: Padding(
@@ -35,13 +41,13 @@ class CustomBestSelleritems extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .5,
                       child: Text(
-                        "Harry Poter and the Global of Fire",
+                        bookModel.volumeInfo.title!,
                         style: Styles.textstyle20,
                         maxLines: 2,
                       ),
                     ),
                     Text(
-                      "J.K Rolling",
+                      bookModel.volumeInfo.authors![0],
                       style: Styles.textstyle18,
                       maxLines: 2,
                     ),

@@ -20,6 +20,7 @@ class CustomListItems extends StatelessWidget {
           aspectRatio: 2.5 / 4,
           child: Container(
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image: NetworkImage(
