@@ -1,4 +1,5 @@
 import 'package:book_app/core/utils/styles.dart';
+import 'package:book_app/features/home/data/models/book2_model.dart';
 import 'package:book_app/features/home/presentation/views/widgets/book_actions_buttons.dart';
 import 'package:book_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book_app/features/home/presentation/views/widgets/custom_list_view_book_details.dart';
@@ -8,7 +9,12 @@ import 'appbar_book_details.dart';
 import 'custom_list_items.dart';
 
 class BookDetailsBody extends StatelessWidget {
-  const BookDetailsBody({super.key});
+  const BookDetailsBody({
+    super.key,
+    required this.bookModel,
+  });
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +23,17 @@ class BookDetailsBody extends StatelessWidget {
         child: Column(
           children: [
             AppbarBookDetails(),
-            CustomListItems(imageUrl: 'https://th.bing.com/th?q=%d8%b5%d9%88%d8%b1+%d9%83%d8%aa%d8%a8+%d9%83%d8%aa%d8%a7%d8%a8&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-XA&cc=EG&setlang=en&adlt=strict&t=1&mw=247',),
+            CustomListItems(
+              imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+            ),
             SizedBox(height: 20),
             Text(
-              "The Jungle Book",
-              style: Styles.textstyle30,
+              bookModel.volumeInfo.title!,
+              style: Styles.textstyle20,
             ),
             SizedBox(height: 5),
             Text(
-              "Rudyard Kilping",
+              bookModel.volumeInfo.authors![0],
               style: Styles.textstyle20,
             ),
             SizedBox(height: 15),

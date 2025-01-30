@@ -19,7 +19,10 @@ class CustomBestSelleritems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(RoutesApp.bookDetails);
+        GoRouter.of(context).push(
+          RoutesApp.bookDetails,
+          extra: bookModel,
+        );
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
