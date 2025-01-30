@@ -24,7 +24,7 @@ class CustomBestSelleritems extends StatelessWidget {
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * .13,
-              child: CustomListItems(),
+              child: CustomListItems(imageUrl: 'https://th.bing.com/th?q=%d8%b5%d9%88%d8%b1+%d9%83%d8%aa%d8%a8+%d9%83%d8%aa%d8%a7%d8%a8&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-XA&cc=EG&setlang=en&adlt=strict&t=1&mw=247',),
             ),
             Expanded(
               child: Padding(

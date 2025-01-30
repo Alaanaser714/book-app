@@ -1,4 +1,5 @@
-import 'package:book_app/features/home/data/models/book_model.dart';
+
+import '../../../../data/models/book2_model.dart';
 
 abstract class FeaturedBookStates {}
 

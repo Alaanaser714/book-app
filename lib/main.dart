@@ -9,7 +9,7 @@ import 'core/utils/services_locator.dart';
 import 'features/home/data/repo/home_repo_impl.dart';
 
 void main() {
-  ServicesLocator();
+  ServicesLocator().setUpServicesLocator();
   runApp(const MyApp());
 }
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => FeaturedBookCuibt(
             getIt.get<HomeRepoImpl>(),
-          ),
+          )..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => NewestBookCubit(

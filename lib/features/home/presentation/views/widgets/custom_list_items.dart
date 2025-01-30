@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/images_app.dart';
-
 class CustomListItems extends StatelessWidget {
   const CustomListItems({
     super.key,
+    required this.imageUrl,
   });
+
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +20,13 @@ class CustomListItems extends StatelessWidget {
           aspectRatio: 2.5 / 4,
           child: Container(
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(
-                      ImagesApp.testImages,
-                    ))),
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: NetworkImage(
+                  imageUrl,
+                ),
+              ),
+            ),
           ),
         ),
       ),
